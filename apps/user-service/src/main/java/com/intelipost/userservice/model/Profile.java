@@ -1,5 +1,7 @@
 package com.intelipost.userservice.model;
 
+import com.intelipost.userservice.repository.PermissionRepository;
+import com.intelipost.userservice.repository.ProfileRepository;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,4 +28,12 @@ public class Profile implements Serializable {
         this.description = description;
     }
     
+    /**
+     * Carrega permissões atreladas ao perfil
+     * @param permissionRepository repositório de permissões {@link PermissionRepository}
+     */
+    public void loadPermissions(PermissionRepository permissionRepository){
+        if(permissionRepository == null) return;
+        this.permissions.addAll(permissionRepository.findAllByProfile(this.id));
+    }
 }

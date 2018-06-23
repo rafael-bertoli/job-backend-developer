@@ -1,5 +1,6 @@
 package com.intelipost.userservice.model;
 
+import com.intelipost.userservice.repository.ProfileRepository;
 import java.io.Serializable;
 import lombok.Getter;
 
@@ -26,4 +27,14 @@ public class User implements Serializable {
         this.idProfile = idProfile;
     }
 
+    /**
+     * Carrega dados do perfil do usuário.
+     * @param profileRepository repositório de perfil de acesso {@link ProfileRepository}
+     */
+    public void loadProfile(ProfileRepository profileRepository){
+        if(profileRepository == null) return;
+        this.profile = profileRepository.findById(idProfile).orElse(null);
+        //limpa o id do perfil pois o mesmo ja deverá existir dentro da objeto Perfil
+        this.idProfile = null; 
+    }
 }
