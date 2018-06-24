@@ -38,7 +38,7 @@ A solução foi dividida em 3 módulos:
 ### eureka-service
    Módulo de discovery para gerenciar os nós do serviço de usuário.
 ### user-service
-   Módulo de micro-serviço de usuário para expor os dados via Rest API. O módulo pode ser escalado de forma horizontal de acordo com a necessidade de atendar a alta demanda, o serviço possui uma camada de cache para diminuir o overload no banco de dados. O serviço pode ser consumido por outros sistemas utilizando Basic Authorization (username: Intelipost | password: 0e16f2217c24791f17e62de0e907a312). (https://github.com/rafael-bertoli/job-backend-developer/blob/desafio/Intelipost-UserService.postman_collection.json)
+   Módulo de micro-serviço de usuário para expor os dados via Rest API. O módulo pode ser escalado de forma horizontal de acordo com a necessidade de atendar a alta demanda, o serviço possui uma camada de cache para diminuir o overload no banco de dados. O serviço pode ser consumido por outros sistemas utilizando Basic Authorization (username: Intelipost | password: 0e16f2217c24791f17e62de0e907a312). (https://github.com/rafael-bertoli/job-backend-developer/blob/master/Intelipost-UserService.postman_collection.json)
 ### web-front: 
    Módulo de login, este módulo realiza integração com o serviço de usuário utilizando ribbon load balancer para distribuir a carga entre os nós do serviço. O módulo conta também com spring session redis para que possa ser escalado conforme a necessidade sem ter problemas de sessão.
    O módulo pode ser acessado utilizando as seguintes credenciais:
