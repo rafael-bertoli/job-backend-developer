@@ -36,11 +36,11 @@ CREATE TABLE IF NOT EXISTS users (
 ) DEFAULT CHARSET=utf8;
 
 INSERT INTO permissions (id, permission) VALUES 
-('9272fff697f4402e9dc124d6b4b1a80c','USER'), 
+('9272fff697f4402e9dc124d6b4b1a80c','PRODUCT'), 
 ('a56d93662c5e49be9e936b7dcacae724','NFE'), 
 ('503303eb390e44658452171bc573a85c','PURCHASE_ORDER'), 
 ('312e4dc1458245d7ae4c124f93d706de','SALE'), 
-('d1c395e2869c430fb30ac8bf76ab6e66','PRODUCT');
+('d1c395e2869c430fb30ac8bf76ab6e66','USER');
 
 INSERT INTO profiles (id, name, description) VALUES
 ('da71d374faab4c1f8636f8f7343ad7fd', 'ADMIN' , 'Perfil administrativo com acesso total ao sistema.'),
