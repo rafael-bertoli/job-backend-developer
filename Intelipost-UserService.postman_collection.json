@@ -1,0 +1,136 @@
+{
+	"info": {
+		"name": "Intelipost-UserService",
+		"_postman_id": "27628eb6-3ca5-de3a-b4f4-45be4063901f",
+		"description": "Serviço de usuário para desafio proposto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar um usuário por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "0e16f2217c24791f17e62de0e907a312",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Intelipost",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8301/users/a1582ae90f0c4dfe9bfc53bdfb230f52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8301",
+					"path": [
+						"users",
+						"a1582ae90f0c4dfe9bfc53bdfb230f52"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta um usuário utilizando filtro",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "0e16f2217c24791f17e62de0e907a312",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Intelipost",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8301/users/?name=Op",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8301",
+					"path": [
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Op",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta usuário com dados de login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "0e16f2217c24791f17e62de0e907a312",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Intelipost",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"operator@system.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8301/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8301",
+					"path": [
+						"users",
+						"login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
