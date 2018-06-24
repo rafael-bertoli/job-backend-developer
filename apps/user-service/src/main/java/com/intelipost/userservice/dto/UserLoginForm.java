@@ -11,5 +11,13 @@ public class UserLoginForm {
 
     private String username;
     private String password;
+
+    public UserLoginForm() {
+    }
+
+    public UserLoginForm(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
     
 }

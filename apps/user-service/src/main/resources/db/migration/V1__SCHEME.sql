@@ -59,6 +59,6 @@ INSERT INTO profile_permissions (id_permission, id_profile) VALUES
 ('d1c395e2869c430fb30ac8bf76ab6e66','1af2669e3ed34f2aaa4c01643e192d8e');
 
 INSERT INTO users (id, name, username, password, id_profile) VALUES
-('e274a744bd634a789e33d59b3dccf69c', 'User ADM', 'admin@system.com', '123456', 'da71d374faab4c1f8636f8f7343ad7fd'),
-('a1582ae90f0c4dfe9bfc53bdfb230f52', 'User', 'user@system.com', '123456', '1af2669e3ed34f2aaa4c01643e192d8e'),
-('96c3d5a81c01472a8db5ff71c373ec97', 'Operator', 'operator@system.com', '123456', 'd41f5546a12548818ed5f26454e1938e');
+('e274a744bd634a789e33d59b3dccf69c', 'Renato Rocha', 'admin@system.com', '123456', 'da71d374faab4c1f8636f8f7343ad7fd'),
+('a1582ae90f0c4dfe9bfc53bdfb230f52', 'João Rocha', 'user@system.com', '123456', '1af2669e3ed34f2aaa4c01643e192d8e'),
+('96c3d5a81c01472a8db5ff71c373ec97', 'Pedro Paulo', 'operator@system.com', '123456', 'd41f5546a12548818ed5f26454e1938e');
