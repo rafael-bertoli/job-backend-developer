@@ -3,6 +3,7 @@ package com.intelipost.webfront.controller;
 import com.intelipost.webfront.exception.UserNotFoundException;
 import com.intelipost.webfront.exception.dto.User;
 import com.intelipost.webfront.service.UserService;
+import com.intelipost.webfront.session.UserSession;
 import java.io.IOException;
 import java.util.Map;
 import javax.naming.ServiceUnavailableException;
@@ -16,14 +17,20 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- *
+ * 
  * @author Rafael
  */
 @Controller
 public class LoginController {
     
-    @Autowired
     private UserService userService;
+    private UserSession userSession;
+    
+    @Autowired
+    public LoginController(UserService userService, UserSession userSession) {
+        this.userService = userService;
+        this.userSession = userSession;
+    }
 
     @RequestMapping("/")
     public String index(Map<String, Object> model) {
@@ -34,7 +41,7 @@ public class LoginController {
     public String login(HttpServletRequest request, @RequestParam(value = "username") String username, @RequestParam(value = "password") String password, RedirectAttributes redirectAttributes,  Map<String, Object> model) throws RestClientException, IOException {
         try {
             User user = userService.doLogin(username, password);
-            request.getSession().setAttribute("USER_SESSION", user);
+            userSession.startSession(request, user);
             return "redirect:/user";
         } catch (UserNotFoundException e) {
             redirectAttributes.addFlashAttribute("failure", "Login inválido, verifique seus dados.");
@@ -46,14 +53,14 @@ public class LoginController {
     
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, RedirectAttributes redirectAttributes) {
-        request.getSession().removeAttribute("USER_SESSION");
+        userSession.closeSession(request); 
         redirectAttributes.addFlashAttribute("success", "Você deslogou do sistema");
         return "redirect:/";
     }
     
     @RequestMapping("/user")
     public String user(HttpServletRequest request, Map<String, Object> model) {
-        model.put("user", request.getSession().getAttribute("USER_SESSION"));
+        model.put("user", userSession.getUserInSession(request));
         return "user";
     }
 }
