@@ -1,6 +1,6 @@
-package com.intelipost.webfront.exception.dto;
+package com.intelipost.webfront.dto;
 
-import com.intelipost.webfront.exception.dto.enumeration.PermissionEnum;
+import com.intelipost.webfront.dto.enumeration.PermissionEnum;
 import java.io.Serializable;
 import lombok.Getter;
 

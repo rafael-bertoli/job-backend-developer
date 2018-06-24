@@ -1,4 +1,4 @@
-package com.intelipost.webfront.exception.dto.enumeration;
+package com.intelipost.webfront.dto.enumeration;
 
 /**
  * Enum de permissões

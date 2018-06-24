@@ -5,7 +5,7 @@
  */
 package com.intelipost.webfront.session;
 
-import com.intelipost.webfront.exception.dto.User;
+import com.intelipost.webfront.dto.User;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 

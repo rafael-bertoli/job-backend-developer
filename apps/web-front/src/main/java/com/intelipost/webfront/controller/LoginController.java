@@ -1,7 +1,7 @@
 package com.intelipost.webfront.controller;
 
 import com.intelipost.webfront.exception.UserNotFoundException;
-import com.intelipost.webfront.exception.dto.User;
+import com.intelipost.webfront.dto.User;
 import com.intelipost.webfront.service.UserService;
 import com.intelipost.webfront.session.UserSession;
 import java.io.IOException;
