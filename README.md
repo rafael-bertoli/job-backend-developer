@@ -52,6 +52,8 @@ senha: 123456
 login: operator@system.com
 senha: 123456
 ```
+### Cloud
+Endereço para acesso no cloud: http://ec2-18-217-8-136.us-east-2.compute.amazonaws.com:8501/
 
 ### Deploy
 Faça download dos arquivos (eureka-service.jar, user-service.jar e web-front.jar) do último release (https://github.com/rafael-bertoli/job-backend-developer/releases/tag/untagged-c35ab3c40706d63b785a)
