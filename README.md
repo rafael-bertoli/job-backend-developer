@@ -72,6 +72,12 @@ $ java -jar user-service.jar --server.port=8301 --spring.redis.port=6301 -spring
 $ java -Dspring.profiles.active=production -jar user-service.jar --server.port=8301 --spring.redis.port=6301 --db.url=localhost --db.port=3306 --db.schema=intelipost --db.user=root --db.pass=root --spring.redis.embedded=false --spring.redis.host=localhost --spring.redis.password=1234
 ```
 A documentação do serviço pode ser acessada em http://localhost:8301/swagger-ui.html
+Para consumir o serviço utilizar as seguintes credenciais:
+```
+username: Intelipost
+password: 0e16f2217c24791f17e62de0e907a312 
+```
+
 #### Iniciar módulo web-front
 ```
 $ java -jar web-front.jar --server.port=8501 --spring.redis.port=6501 --spring.redis.host=localhost --spring.redis.embedded=true
